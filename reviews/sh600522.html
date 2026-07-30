@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中天科技（sh600522）解读</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Microsoft YaHei","Segoe UI",sans-serif; background:#F5F8FC; color:#1F2937; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  /* 页面所有文案放开可选中/可复制（除开可交互控件：input/textarea/button 允许 text） */
+  html, body, p, div, span, h1, h2, h3, h4, h5, h6, li, td, th, a, pre, code, blockquote { -webkit-user-select:text; -moz-user-select:text; -ms-user-select:text; user-select:text; }
+  .wrap { max-width:1080px; margin:0 auto; padding:22px; }
+  .back { display:inline-block; font-size:13px; color:#1E40AF; text-decoration:none; margin-bottom:14px; font-weight:600; }
+  .back:hover { text-decoration:underline; }
+  .ph { position:relative; background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 100%); color:#fff; padding:22px 28px 20px; border-radius:14px; margin-bottom:14px; overflow:hidden; box-shadow:0 4px 16px rgba(30,58,138,.22); }
+  .ph::before { content:""; position:absolute; right:-40px; top:-40px; width:160px; height:160px; background:radial-gradient(circle,rgba(255,255,255,.10) 0%,rgba(255,255,255,0) 70%); border-radius:50%; pointer-events:none; }
+  .ph::after  { content:""; position:absolute; right:30px; bottom:-30px; width:90px; height:90px; background:radial-gradient(circle,rgba(255,255,255,.08) 0%,rgba(255,255,255,0) 70%); border-radius:50%; pointer-events:none; }
+  .ph h1 { font-size:20px; margin-bottom:5px; font-weight:800; letter-spacing:.2px; color:#fff; }
+  .ph .sub { font-size:12.5px; opacity:.82; }
+  .layout { display:flex; gap:18px; align-items:flex-start; }
+  .sidenav { position:sticky; top:14px; flex:0 0 152px; display:flex; flex-direction:column; gap:2px; background:#FFFFFF; border:1px solid #EEF1F6; border-radius:12px; padding:10px 7px; box-shadow:0 1px 3px rgba(62,59,54,.05); }
+  .sidenav .sn-h { font-size:11px; font-weight:700; color:#9AA4B2; letter-spacing:.5px; padding:2px 10px 5px; }
+  .sidenav a { font-size:13px; color:#5F6B7A; text-decoration:none; padding:7px 11px; border-radius:8px; border-left:2px solid transparent; transition:.12s; }
+  .sidenav a:hover { background:#F4F7FC; color:#1E3A8A; }
+  .sidenav a.active { background:#DBE5FF; color:#1E3A8A; font-weight:600; border-left-color:#1E40AF; }
+  .main { flex:1 1 auto; min-width:0; }
+  .card { background:#FFFFFF; border:1px solid #EEF1F6; border-radius:12px; margin-bottom:18px; overflow:hidden; box-shadow:0 1px 2px rgba(16,27,38,.05),0 4px 14px rgba(16,27,38,.04); scroll-margin-top:14px; }
+  .card-h { display:flex; align-items:center; gap:12px; padding:14px 20px; background:#F8FAFD; border-bottom:1px solid #EEF1F6; }
+  .ttl .code { font-family:Consolas,monospace; font-size:12.5px; color:#9AA4B2; margin-right:8px; }
+  .ttl .nm { font-size:18px; font-weight:700; color:#1F2937; }
+  .badge { margin-left:auto; padding:3px 12px; border-radius:20px; font-size:12px; font-weight:600; color:#fff; }
+  .sub2 { padding:7px 20px; font-size:12.5px; color:#5F6B7A; background:#F4F7FC; border-bottom:1px solid #EEF1F6; }
+  .etf-meta { padding:7px 20px; font-size:12.5px; color:#1F2937; background:#EEF2F9; border-bottom:1px solid #EEF1F6; }
+  .hold-table-wrap { padding:8px 16px 12px; border-bottom:1px solid #EEF1F6; }
+  .hl-title { font-size:12px; color:#5F6B7A; margin-bottom:6px; font-weight:600; }
+  /* 十大重仓折叠模块：默认收起，仅标题行常驻 */
+  .hold-fold { border-bottom:1px solid #EEF1F6; }
+  .hold-fold-h { display:flex; justify-content:space-between; align-items:center; cursor:pointer; padding:14px 20px; background:#F8FBFE; }
+  .hold-fold-h .hl-title { display:flex; align-items:baseline; gap:10px; margin-bottom:0; font-size:13px; font-weight:700; color:#1F2937; }
+  .hold-fold-h .hl-ts-inline { font-weight:400; font-size:11px; color:#5F6B7A; font-variant-numeric:tabular-nums; }
+  .hold-fold-body { display:none; padding:8px 16px 12px; }
+  .hold-fold-body.open { display:block; }
+  .hold-table { width:100%; border-collapse:collapse; font-size:12.5px; table-layout:fixed; }
+  .hold-table thead th { background:#EEF2F9; color:#1E3A8A; font-weight:700; padding:8px 10px; font-size:12px; text-align:left; border-bottom:2px solid #C9D6EC; }
+  .hold-table thead th:last-child { border-right:0; }
+  .hold-table tbody td { padding:7px 10px; border-bottom:1px solid #EEF1F6; color:#1F2937; font-variant-numeric:tabular-nums; }
+  .hold-table tbody tr:nth-child(even) td { background:#FAFCFF; }
+  .hold-table tbody tr:hover td { background:#DBE5FF; }
+  .hold-table tbody tr:last-child td { border-bottom:0; }
+  .hold-table .col-num { color:#9AA4B2; font-size:11.5px; text-align:center; width:32px; }
+  .hold-table .col-ratio { color:#1E40AF; font-weight:700; text-align:right; width:78px; }
+  .hold-table .col-name { padding-left:8px; }
+  .hold-table .col-code { font-family:Consolas,Menlo,monospace; font-size:12px; color:#9AA4B2; text-align:left; width:96px; padding-left:8px; letter-spacing:.3px; }
+  .hold-table .col-price { text-align:right; color:#1F2937; font-weight:700; width:88px; font-variant-numeric:tabular-nums; }
+  .hold-table .col-price .up { color:#F45C5C; }
+  .hold-table .col-price .down { color:#3DB880; }
+  .hold-table .col-chg { text-align:right; font-weight:700; color:#1F2937; width:132px; font-variant-numeric:tabular-nums; }
+  .hold-table .col-chg .up { color:#F45C5C; }
+  .hold-table .col-chg .down { color:#3DB880; }
+  .hold-table [data-live] { transition:color .15s; }
+  .hold-table [data-live].flash { animation:hl-flash 0.6s ease; }
+  .hl-ts { margin-top:6px; text-align:right; font-size:11px; color:#5F6B7A; font-variant-numeric:tabular-nums; }
+  @keyframes hl-flash { 0% { background:rgba(30,64,175,.14); border-radius:4px; } 100% { background:transparent; } }
+  .qm { border-bottom:1px solid #EEF1F6; scroll-margin-top:14px; }
+  .qm-h { display:flex; justify-content:space-between; align-items:center; cursor:pointer; padding:14px 20px; background:#F8FBFE; }
+  .qm-lbl { font-size:13px; font-weight:700; color:#1F2937; }
+  .qm-h-l { display:flex; align-items:baseline; gap:10px; }
+  .qm-price { font-size:20px; font-weight:800; }
+  .qm-chg { font-size:14px; font-weight:700; }
+  .qm-toggle { font-size:14px; color:#9AA4B2; transition:.15s; }
+  .qm-h-l .up { color:#F45C5C; }
+  .qm-h-l .down { color:#3DB880; }
+  .qm-body { display:none; padding:14px 20px 18px; background:#F8FBFE; }
+  .qm-body.open { display:block; }
+  .qm-empty { color:#C2CAD6; font-size:13px; }
+  .qm-sub { margin-top:14px; padding-top:12px; border-top:1px dashed #EEF1F6; }
+  .qm-sub-t { font-size:12px; color:#5F6B7A; margin-bottom:9px; }
+  .stats { display:flex; flex-wrap:wrap; gap:9px; }
+  .stat { flex:1 1 100px; background:#F5F8FC; border:1px solid #EEF1F6; border-radius:8px; padding:9px 11px; }
+  .stat-k { font-size:11px; color:#9AA4B2; }
+  .stat-v { font-size:15px; font-weight:700; color:#1F2937; }
+  .stat.up .stat-v { color:#F45C5C; }
+  .stat.down .stat-v { color:#3DB880; }
+  .chart-wrap { padding:16px 20px 6px; border-bottom:1px solid #EEF1F6; }
+  .chart-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+  .chart-t { font-size:13px; font-weight:700; color:#1F2937; }
+  .chart-meta { font-size:12.5px; color:#5F6B7A; display:flex; align-items:center; gap:6px; }
+  .dot { width:8px; height:8px; border-radius:50%; display:inline-block; }
+  .dot.up { background:#F45C5C; }
+  .dot.down { background:#3DB880; }
+  .chart-box { position:relative; padding:4px 0 2px; }
+  .rev-chart { width:100%; height:auto; display:block; }
+  .ctip { position:absolute; display:none; pointer-events:none; background:rgba(31,41,55,.94); color:#fff; font-size:11.5px; line-height:1.55; padding:7px 10px; border-radius:8px; z-index:5; white-space:nowrap; box-shadow:0 3px 10px rgba(0,0,0,.22); }
+  .ctip b { color:#fff; }
+  .ctip .cv { font-weight:700; }
+  .ctip .cu { color:#FFB4A8; }
+  .ctip .cd { color:#9CDDB1; }
+  .blocks { padding:14px 18px; }
+  .blk { margin-bottom:12px; background:#F8FAFD; border:1px solid #EEF1F6; border-left:3px solid var(--ac); border-radius:8px; padding:12px 16px; scroll-margin-top:14px; }
+  .blk:last-child { margin-bottom:0; }
+  .bk-t { font-size:14px; font-weight:700; color:var(--ac); padding-bottom:7px; margin-bottom:9px; border-bottom:1px solid #EEF1F6; }
+  .bk-c { font-size:13.5px; }
+  .ss { margin-bottom:8px; }
+  .ss:last-child { margin-bottom:0; }
+  .ss-t { display:inline-block; font-size:11.5px; font-weight:600; color:var(--ac); background:#fff; border:1px solid var(--ac); border-radius:5px; padding:1px 7px; margin-bottom:4px; }
+  .ss-c { font-size:13.5px; color:#1F2937; line-height:1.75; word-break:break-word; margin:0; }
+  .ss-c.plain { margin:0 0 4px; }
+  .ss-c a.nl { color:#1E40AF; }
+  .nl { color:#1E40AF; text-decoration:none; border-bottom:1px dotted #1E40AF; word-break:break-all; }
+  .nl:hover { color:#1E3A8A; }
+  .news-item { font-size:12.5px; padding:6px 0; border-bottom:1px dashed #EEF1F6; }
+  .ni-idx { color:#9AA4B2; }
+  .ni-date { color:#5F6B7A; }
+  .ni-src { color:#9AA4B2; font-size:11.5px; }
+  .empty { color:#C2CAD6; }
+  .adv-body { padding:16px 20px; }
+  .ai-sum { background:#DBE5FF; border:1px solid #BFD0F4; border-radius:10px; padding:13px 15px; margin-bottom:14px; }
+  .ai-sum-h { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:9px; }
+  .ai-sum-hl { display:flex; align-items:center; gap:8px; }
+  .ai-badge { font-size:12px; font-weight:700; color:#fff; background:#1E40AF; border-radius:6px; padding:2px 9px; }
+  .ai-tag { font-size:11px; color:#5F6B7A; }
+  .ai-sum-c { font-size:13.5px; color:#1F2937; line-height:1.9; word-break:break-word; }
+  .ai-empty { color:#9AA4B2; font-size:13px; }
+  .adv-divider { display:flex; align-items:center; font-size:12px; color:#9AA4B2; margin-bottom:12px; }
+  .adv-divider::before, .adv-divider::after { content:""; flex:1; height:1px; background:#EEF1F6; }
+  .adv-divider span { padding:0 10px; }
+  .adv-view { font-size:13.5px; color:#1F2937; line-height:1.9; white-space:pre-wrap; word-break:break-word; min-height:40px; }
+  .adv-empty { color:#9AA4B2; font-size:13px; }
+  .adv-edit { display:none; width:100%; min-height:120px; margin-top:4px; padding:10px 12px; font-size:13.5px; font-family:inherit; color:#1F2937; border:1px solid #BFD0F4; border-radius:8px; outline:none; resize:vertical; }
+  .adv-actions { margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; }
+  .btn { padding:6px 16px; font-size:13px; border-radius:8px; border:1px solid #E2E9F2; background:#fff; color:#1F2937; cursor:pointer; display:inline-flex; align-items:center; }
+  .btn:hover { background:#F4F7FC; }
+  .btn-primary { background:#1E40AF; color:#fff; border-color:#1E40AF; }
+  .btn-primary:hover { background:#1E3A8A; }
+  .btn-ghost { color:#1E40AF; border-color:#BFD0F4; background:#fff; }
+  .btn-ghost:hover { background:#DBE5FF; }
+  .btn-mini { padding:3px 10px !important; font-size:12px !important; border-radius:6px !important; }
+  .hb-count { display:inline-block; min-width:18px; height:18px; line-height:18px; padding:0 6px; margin-left:6px; background:#1E40AF; color:#fff; border-radius:9px; font-size:11px; font-weight:700; text-align:center; }
+  .adv-meta { margin-left:auto; font-size:11.5px; color:#9AA4B2; }
+  .adv-history { margin-top:14px; border-top:1px dashed #E2E9F2; padding-top:12px; }
+  .ai-history { margin-top:10px; border-top:1px dashed rgba(30,64,175,.5); padding-top:10px; }
+  .adv-history-h { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; font-size:12.5px; color:#5F6B7A; font-weight:600; }
+  .adv-history-h .x { cursor:pointer; color:#9AA4B2; font-size:16px; line-height:1; }
+  .hist-item { position:relative; background:#F8FAFD; border:1px solid #EEF1F6; border-radius:8px; padding:10px 12px; margin-bottom:8px; }
+  .hist-meta { display:flex; align-items:center; justify-content:space-between; font-size:11.5px; color:#9AA4B2; margin-bottom:6px; }
+  .hist-meta .ts { font-family:Consolas,monospace; }
+  .hist-body { font-size:13px; color:#1F2937; line-height:1.7; white-space:pre-wrap; word-break:break-word; }
+  .hist-empty { color:#9AA4B2; font-size:13px; text-align:center; padding:12px 0; }
+  .disclaimer { margin:0 22px 22px; background:#F8FAFD; border:1px solid #EEF1F6; border-radius:10px; padding:12px 16px; font-size:12px; color:#9AA4B2; line-height:1.7; }
+  .foot { text-align:center; padding:14px; color:#9AA4B2; font-size:12px; }
+  @media (max-width:760px){
+    .layout { flex-direction:column; gap:12px; }
+    .sidenav { position:static; flex-basis:auto; flex-direction:row; flex-wrap:wrap; gap:6px; }
+    .sidenav .sn-h { width:100%; }
+    .sidenav a { border-left:none; border-bottom:2px solid transparent; }
+  }
+</style>
+<script>
+  function escapeHtml(s){return (s||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function copyText(t){
+    // 直接走最强兜底：textarea + execCommand；失败则弹手动复制模态
+    // （不再走 navigator.clipboard：file:///iframe 等场景 writeText 经常被拒、且无可见反馈）
+    return fallbackCopy(t);
+  }
+  function fallbackCopy(t){
+    // 关键：textarea 必须「可视、聚焦、选中」，否则 execCommand('copy') 会被浏览器静默拒绝
+    var ta=document.createElement('textarea');
+    ta.value=t;
+    ta.setAttribute('readonly','');
+    ta.style.cssText='position:fixed;left:12px;top:12px;width:280px;min-height:80px;padding:8px 10px;border:1.5px solid #1E40AF;border-radius:8px;font-size:13px;line-height:1.6;background:#FAFCFF;color:#1F2937;z-index:2147483647;outline:none;box-shadow:0 4px 12px rgba(30,64,175,.22);';
+    document.body.appendChild(ta);
+    var ok=false;
+    try{
+      ta.focus({preventScroll:true});
+      ta.select();
+      ta.setSelectionRange(0, ta.value.length);
+      ok=document.execCommand('copy');
+    }catch(e){ ok=false; }
+    if(ok){
+      document.body.removeChild(ta);
+    } else {
+      // execCommand 被拒：保留 textarea（不删除，让用户能看到并手动复制），同时弹模态强调提示
+      ta.id='_fallbackTA';
+      showManualCopy(t, ta);
+    }
+    return ok;
+  }
+  function showManualCopy(t, keepTa){
+    var m=document.getElementById('manualCopyModal');
+    if(!m){
+      m=document.createElement('div');
+      m.id='manualCopyModal';
+      m.style.cssText='position:fixed;inset:0;background:rgba(31,41,55,.55);z-index:9999;display:flex;align-items:center;justify-content:center;';
+      m.innerHTML='<div style="background:#fff;border-radius:14px;padding:20px 22px;width:min(640px,94vw);max-height:84vh;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,.32);">'
+        +'<div style="font-size:16px;font-weight:700;color:#1F2937;margin-bottom:6px;display:flex;align-items:center;gap:8px;"><span style="display:inline-block;width:22px;height:22px;border-radius:50%;background:#1E40AF;color:#fff;text-align:center;line-height:22px;font-size:14px;">!</span>请手动复制</div>'
+        +'<div style="font-size:12.5px;color:#6B7280;margin-bottom:12px;line-height:1.7;">浏览器拦截了自动复制，请点击 <b>全选</b> 后按 <b style="color:#1E40AF;">Ctrl+C</b> / <b style="color:#1E40AF;">⌘+C</b> 复制下方内容</div>'
+        +'<textarea id="manualCopyTa" style="flex:1;min-height:200px;max-height:54vh;width:100%;padding:12px 14px;font-size:13px;font-family:Consolas,monospace;line-height:1.7;border:1.5px solid #1E40AF;border-radius:8px;outline:none;resize:vertical;color:#1F2937;background:#FAFCFF;"></textarea>'
+        +'<div style="margin-top:14px;display:flex;gap:8px;justify-content:flex-end;">'
+        +'<button id="manualCopySel" style="padding:8px 18px;font-size:13px;font-weight:600;border-radius:8px;border:1px solid #BFD0F4;background:#fff;color:#1E40AF;cursor:pointer;">全选</button>'
+        +'<button id="manualCopyClose" style="padding:8px 18px;font-size:13px;font-weight:600;border-radius:8px;border:1px solid transparent;background:#1E40AF;color:#fff;cursor:pointer;">关闭</button>'
+        +'</div></div>';
+      document.body.appendChild(m);
+      m.addEventListener('click',function(e){ if(e.target===m) closeManualCopy(); });
+      document.getElementById('manualCopyClose').onclick=closeManualCopy;
+      document.getElementById('manualCopySel').onclick=function(){
+        var ta=document.getElementById('manualCopyTa');
+        ta.focus(); ta.select();
+      };
+    }
+    var ta=document.getElementById('manualCopyTa');
+    ta.value=t;
+    m.style.display='flex';
+    setTimeout(function(){ ta.focus(); ta.select(); }, 30);
+  }
+  function closeManualCopy(){
+    var m=document.getElementById('manualCopyModal');
+    if(m) m.style.display='none';
+    var kt=document.getElementById('_fallbackTA');
+    if(kt){ kt.parentNode.removeChild(kt); }
+  }
+  function flash(msg){
+    var t=document.getElementById('toast');
+    if(!t){ t=document.createElement('div'); t.id='toast'; t.style.cssText='position:fixed;left:50%;bottom:32px;transform:translateX(-50%);background:rgba(31,41,55,.92);color:#fff;padding:8px 16px;border-radius:8px;font-size:13px;z-index:999;opacity:0;transition:.2s;pointer-events:none;'; document.body.appendChild(t);}
+    t.textContent=msg; t.style.opacity='1';
+    clearTimeout(t._tm); t._tm=setTimeout(function(){t.style.opacity='0';},1400);
+  }
+  function toggleQm(code){
+    var b=document.getElementById('qmb_'+code); if(!b) return;
+    var open=b.classList.toggle('open');
+    var t=document.getElementById('qmt_'+code); if(t) t.textContent= open?'▴':'▾';
+  }
+  function toggleHold(code){
+    var b=document.getElementById('holdb_'+code); if(!b) return;
+    var open=b.classList.toggle('open');
+    var t=document.getElementById('holdt_'+code); if(t) t.textContent= open?'▴':'▾';
+  }
+  /* 内嵌交互式走势图：面积渐变 + 末点标注 + 网格 + 悬浮十字光标显示 日期/收盘价/较期初涨跌幅 */
+  function renderTrend(svgId, tipId, data, color){
+    var svg=document.getElementById(svgId); if(!svg||!data||data.length<2) return;
+    var W=760,H=320, pl=48,pr=14,pt=18,pb=30;
+    var pw=W-pl-pr, ph=H-pt-pb, baseY=pt+ph;
+    var vals=data.map(function(d){return d.c;});
+    var min=Math.min.apply(null,vals), max=Math.max.apply(null,vals);
+    var pad=(max-min)*0.12||1; min-=pad; max+=pad;
+    var n=data.length;
+    function X(i){return pl + (n===1?pw/2:i/(n-1)*pw);}
+    function Y(v){return pt + (1-(v-min)/(max-min))*ph;}
+    var up = data[n-1].c >= data[0].c;
+    var col = up ? '#F45C5C' : '#3DB880';
+    var dpath=''; data.forEach(function(d,i){ dpath += (i?'L':'M')+X(i).toFixed(1)+' '+Y(d.c).toFixed(1)+' ';});
+    var apath='M'+X(0).toFixed(1)+' '+Y(data[0].c).toFixed(1)+' ';
+    for(var i=1;i<n;i++){ apath += 'L'+X(i).toFixed(1)+' '+Y(data[i].c).toFixed(1)+' '; }
+    apath += 'L'+X(n-1).toFixed(1)+' '+baseY.toFixed(1)+' L'+X(0).toFixed(1)+' '+baseY.toFixed(1)+' Z';
+    var grid=''; for(var g=0;g<=4;g++){var y=pt+g/4*ph; grid+='<line x1="'+pl+'" y1="'+y.toFixed(1)+'" x2="'+(W-pr)+'" y2="'+y.toFixed(1)+'" stroke="#EEF1F6" stroke-width="1"/>';}
+    var ylab=''; for(var g2=0;g2<=4;g2++){var v=max-g2/4*(max-min); var y2=pt+g2/4*ph; ylab+='<text x="'+(pl-8)+'" y="'+(y2+3).toFixed(1)+'" font-size="10" fill="#9AA4B2" text-anchor="end">'+v.toFixed(2)+'</text>';}
+    function fmtDate(s){return s.slice(5);}
+    var xlab=''; [0, Math.floor(n/2), n-1].forEach(function(i){ if(data[i]){ xlab+='<text x="'+X(i).toFixed(1)+'" y="'+(H-10)+'" font-size="10" fill="#9AA4B2" text-anchor="middle">'+fmtDate(data[i].d)+'</text>';}});
+    var gid=svgId+'_grad';
+    svg.innerHTML = '<defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="0" y2="1">'
+        + '<stop offset="0%" stop-color="'+col+'" stop-opacity="0.20"/>'
+        + '<stop offset="100%" stop-color="'+col+'" stop-opacity="0.01"/></linearGradient></defs>'
+      + grid
+      + '<path d="'+apath+'" fill="url(#'+gid+')" stroke="none"/>'
+      + '<path d="'+dpath+'" fill="none" stroke="'+col+'" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>'
+      + ylab + xlab
+      + '<line id="'+svgId+'_base" x1="'+pl+'" y1="'+baseY.toFixed(1)+'" x2="'+(W-pr)+'" y2="'+baseY.toFixed(1)+'" stroke="#EEF1F6" stroke-width="1"/>'
+      + '<line id="'+svgId+'_cross" x1="0" y1="'+pt+'" x2="0" y2="'+baseY.toFixed(1)+'" stroke="'+col+'" stroke-width="1" stroke-dasharray="3 3" style="display:none"/>'
+      + '<circle id="'+svgId+'_dot" r="4" fill="'+col+'" stroke="#fff" stroke-width="1.6" style="display:none"/>'
+      + '<circle cx="'+X(n-1).toFixed(1)+'" cy="'+Y(data[n-1].c).toFixed(1)+'" r="3.4" fill="'+col+'"/><circle cx="'+X(n-1).toFixed(1)+'" cy="'+Y(data[n-1].c).toFixed(1)+'" r="6" fill="'+col+'" opacity="0.18"/>';
+    svg.addEventListener('mousemove', function(ev){
+      var rect=svg.getBoundingClientRect();
+      var sx=(ev.clientX-rect.left)/rect.width*W;
+      var i=Math.round((sx-pl)/pw*(n-1)); i=Math.max(0,Math.min(n-1,i));
+      var d=data[i]; var px=X(i), py=Y(d.c);
+      var cross=document.getElementById(svgId+'_cross'); cross.setAttribute('x1',px); cross.setAttribute('x2',px); cross.style.display='';
+      var dot=document.getElementById(svgId+'_dot'); dot.setAttribute('cx',px); dot.setAttribute('cy',py); dot.style.display='';
+      var tip=document.getElementById(tipId);
+      var chgPct=(d.c-data[0].c)/data[0].c*100;
+      var ccls=chgPct>=0?'cu':'cd';
+      tip.innerHTML='<b>'+d.d+'</b><br>收盘 <span class="cv">'+d.c.toFixed(2)+'</span><br>较期初 <span class="'+ccls+'">'+(chgPct>=0?'+':'')+chgPct.toFixed(2)+'%</span>';
+      tip.style.display='block';
+      var tx=ev.clientX-rect.left+12, ty=ev.clientY-rect.top-10;
+      var tw=tip.offsetWidth, th=tip.offsetHeight;
+      if(tx+tw>rect.width) tx=ev.clientX-rect.left-tw-12;
+      if(ty+th>rect.height) ty=rect.height-th-4;
+      tip.style.left=tx+'px'; tip.style.top=ty+'px';
+    });
+    svg.addEventListener('mouseleave', function(){
+      document.getElementById(svgId+'_cross').style.display='none';
+      document.getElementById(svgId+'_dot').style.display='none';
+      document.getElementById(tipId).style.display='none';
+    });
+  }
+</script>
+<script>
+  /* 行情实时刷新：腾讯财经行情接口（JSONP），无密钥、支持 file://，失败则保留原值 */
+  var LIVE_TIMER = null;
+  function liveQuote(){
+    var codes = window.__codes__; if(!codes || !codes.length) return;
+    try{
+      var sc = document.createElement('script');
+      sc.src = 'https://qt.gtimg.cn/q=' + codes.join(',');
+      sc.onload = function(){
+        codes.forEach(function(c){
+          var raw = window['v_' + c]; if(!raw) return;
+          var f = String(raw).replace(/^"|"$/g,'').split('~');
+          var price = parseFloat(f[3]); var prev = parseFloat(f[4]);
+          if(isNaN(price) || isNaN(prev)) return;
+          var chg = price - prev; var pct = prev ? chg/prev*100 : 0;
+          var cls = chg >= 0 ? 'up' : 'down';
+          var pEls = document.querySelectorAll('[data-live="price"][data-code="'+c+'"]');
+          var cEls = document.querySelectorAll('[data-live="chg"][data-code="'+c+'"]');
+          pEls.forEach(function(e){ e.textContent = price.toFixed(2); e.className = (e.className.replace(/\b(up|down)\b/g,'')+' '+cls).trim(); });
+          cEls.forEach(function(e){ e.textContent = (chg>=0?'+':'')+chg.toFixed(2)+'  ('+(pct>=0?'+':'')+pct.toFixed(2)+'%)'; e.className = (e.className.replace(/\b(up|down)\b/g,'')+' '+cls).trim(); });
+        });
+        var tsEl=document.getElementById('hlTsInline');
+        if(tsEl){ var nd=new Date(); var pp=function(n){return (n<10?0+n:n);}; tsEl.textContent='数据时点 '+pp(nd.getHours())+':'+pp(nd.getMinutes())+':'+pp(nd.getSeconds()); }
+        try{ document.head.removeChild(sc); }catch(e){}
+      };
+      sc.onerror = function(){ try{ document.head.removeChild(sc); }catch(e){} };
+      document.head.appendChild(sc);
+    }catch(e){}
+  }
+</script>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../index.html">← 返回总目录</a>
+  <div class="ph">
+    <h1>中天科技 解读</h1>
+    <div class="sub">代码 sh600522 ｜ 数据源 westock-data + WebSearch ｜ 13:07 更新</div>
+  </div>
+  <div class="layout">
+    <nav class="sidenav"><div class="sn-h">本页导航</div><a href="#sec-quote" class="active">行情数据</a><a href="#sec-chart" class="">近60日走势</a><a href="#sec-macro" class="">宏观与政策</a><a href="#sec-info" class="">标的信息</a><a href="#sec-forecast" class="">行业一致盈利预测</a><a href="#sec-news" class="">热点资讯</a><a href="#sec-advisor" class="">投顾总结</a></nav>
+    <div class="main">
+      <section class="card">
+        <header class="card-h">
+          <div class="ttl"><span class="code">sh600522</span>
+            <span class="nm">中天科技</span></div>
+          <span class="badge" style="background:#F59E0B">热点股</span>
+        </header>
+        <div class="sub2">通信/电新 ／ 光纤光缆/海缆/电网</div>
+        
+        <div class="qm" id="sec-quote"><div class="qm-h" onclick="toggleQm('sh600522')"><div class="qm-h-l"><span class="qm-lbl">行情数据 · 实时</span><span class="qm-price down" data-live="price" data-code="sh600522">29.34</span><span class="qm-chg down" data-live="chg" data-code="sh600522">-2.07%</span></div><span class="qm-toggle" id="qmt_sh600522">▾</span></div><div class="qm-body" id="qmb_sh600522"><div class="stats"><div class="stat None"><div class="stat-k">今开</div><div class="stat-v">30.02</div></div><div class="stat None"><div class="stat-k">最高</div><div class="stat-v">30.28</div></div><div class="stat None"><div class="stat-k">最低</div><div class="stat-v">28.30</div></div><div class="stat None"><div class="stat-k">成交量</div><div class="stat-v">2,079,792.00 手</div></div><div class="stat None"><div class="stat-k">成交额</div><div class="stat-v">60.64亿</div></div><div class="stat None"><div class="stat-k">换手率</div><div class="stat-v">6.09%</div></div><div class="stat None"><div class="stat-k">量比</div><div class="stat-v">0.99</div></div><div class="stat None"><div class="stat-k">PE(TTM)</div><div class="stat-v">31.35</div></div><div class="stat None"><div class="stat-k">PB</div><div class="stat-v">2.70</div></div><div class="stat None"><div class="stat-k">总市值</div><div class="stat-v">100,136,000,000.00亿</div></div><div class="stat None"><div class="stat-k">流通市值</div><div class="stat-v">100,136,000,000.00亿</div></div><div class="stat None"><div class="stat-k">52周最高</div><div class="stat-v">67.84</div></div><div class="stat None"><div class="stat-k">52周最低</div><div class="stat-v">13.51</div></div></div><div class="qm-sub"><div class="qm-sub-t">近 60 日统计</div><div class="stats"><div class="stat"><div class="stat-k">60日最高</div><div class="stat-v ">67.84</div></div><div class="stat"><div class="stat-k">60日最低</div><div class="stat-v ">29.34</div></div><div class="stat"><div class="stat-k">60日均价</div><div class="stat-v ">45.09</div></div><div class="stat"><div class="stat-k">60日涨跌幅</div><div class="stat-v down">-15.28%</div></div></div></div></div></div>
+        
+        <div class="chart-wrap" id="sec-chart"><div class="chart-head"><span class="chart-t">近 60 日收盘价走势</span><span class="chart-meta"><span class="dot down"></span>区间 -15.28%</span></div><div class="chart-box"><svg id="trend_sh600522" class="rev-chart" viewBox="0 0 760 320"></svg><div id="tip_sh600522" class="ctip"></div></div><script>renderTrend('trend_sh600522','tip_sh600522',[{"d": "2026-05-06", "c": 34.63}, {"d": "2026-05-07", "c": 38.12}, {"d": "2026-05-08", "c": 40.64}, {"d": "2026-05-11", "c": 43.6}, {"d": "2026-05-12", "c": 43.82}, {"d": "2026-05-13", "c": 43.34}, {"d": "2026-05-14", "c": 43.84}, {"d": "2026-05-15", "c": 40.73}, {"d": "2026-05-18", "c": 43.69}, {"d": "2026-05-19", "c": 44.29}, {"d": "2026-05-20", "c": 45.15}, {"d": "2026-05-21", "c": 41.64}, {"d": "2026-05-22", "c": 43.56}, {"d": "2026-05-25", "c": 42.63}, {"d": "2026-05-26", "c": 40.22}, {"d": "2026-05-27", "c": 38.79}, {"d": "2026-05-28", "c": 40.26}, {"d": "2026-05-29", "c": 41.93}, {"d": "2026-06-01", "c": 39.13}, {"d": "2026-06-02", "c": 42.63}, {"d": "2026-06-03", "c": 44.72}, {"d": "2026-06-04", "c": 45.8}, {"d": "2026-06-05", "c": 45.81}, {"d": "2026-06-08", "c": 49.27}, {"d": "2026-06-09", "c": 54.22}, {"d": "2026-06-10", "c": 49.94}, {"d": "2026-06-11", "c": 49.01}, {"d": "2026-06-12", "c": 48.34}, {"d": "2026-06-15", "c": 51.09}, {"d": "2026-06-16", "c": 53.89}, {"d": "2026-06-17", "c": 54.65}, {"d": "2026-06-18", "c": 56.29}, {"d": "2026-06-22", "c": 59.37}, {"d": "2026-06-23", "c": 61.47}, {"d": "2026-06-24", "c": 61.65}, {"d": "2026-06-25", "c": 67.84}, {"d": "2026-06-26", "c": 61.03}, {"d": "2026-06-29", "c": 58.58}, {"d": "2026-06-30", "c": 60.42}, {"d": "2026-07-01", "c": 55.16}, {"d": "2026-07-02", "c": 51.32}, {"d": "2026-07-03", "c": 49.96}, {"d": "2026-07-06", "c": 47.77}, {"d": "2026-07-07", "c": 47.01}, {"d": "2026-07-08", "c": 44.6}, {"d": "2026-07-09", "c": 46.88}, {"d": "2026-07-10", "c": 45.65}, {"d": "2026-07-13", "c": 41.06}, {"d": "2026-07-14", "c": 42.59}, {"d": "2026-07-15", "c": 40.7}, {"d": "2026-07-16", "c": 37.39}, {"d": "2026-07-17", "c": 33.65}, {"d": "2026-07-20", "c": 32.22}, {"d": "2026-07-21", "c": 34.63}, {"d": "2026-07-22", "c": 32.5}, {"d": "2026-07-23", "c": 32.99}, {"d": "2026-07-24", "c": 31.39}, {"d": "2026-07-27", "c": 32.66}, {"d": "2026-07-28", "c": 29.96}, {"d": "2026-07-29", "c": 29.34}],'#3DB880');</script></div>
+        <div class="blocks"><div class="blk" id="sec-macro" style="--ac:#1E40AF"><div class="bk-t">宏观与政策</div><div class="bk-c"><div class="ss"><div class="ss-t">关联维度</div><div class="ss-c">光纤光缆、海洋系列（海缆/海工）、电网建设、新能源（储能/光伏）。</div></div>
+<div class="ss"><div class="ss-t">重要观点（官方）</div><div class="ss-c">据中天科技2026年半年度业绩预告（证券时报，2026-07-14），预计上半年归母净利23.52—25.08亿元（同比+50%~+60%），受益AI算力与数字新基建、光纤光缆量价齐升；据沪市电子与通信业绩说明会（证券时报，2026-05-19），截至2026Q1能源网络在手订单约308亿元（海洋121亿/电网162亿/新能源25亿）。</div></div>
+<div class="ss"><div class="ss-t">①基本面</div><div class="ss-c">2025年归母净利29.02亿元（+2.25%）、2026Q1营收131.42亿元（+34.71%）、归母9.19亿元（+46.42%）；光纤、海缆利润提升。</div></div>
+<div class="ss"><div class="ss-t">②市场走势·境内</div><div class="ss-c">受益AI算力与海风，近一年股价涨约2.55倍、2026年初至4月涨约154%，跻身千亿市值。</div></div>
+<div class="ss"><div class="ss-t">②市场走势·境外</div><div class="ss-c">海外海缆与电力传输需求增长，公司全球布局推进。</div></div>
+<div class="ss"><div class="ss-t">③资金流向</div><div class="ss-c">Q1末北向（香港结算）持股升至11.32%，华夏中证电网设备ETF等新进，机构持仓集中度提升。</div></div></div></div><div class="blk" id="sec-info" style="--ac:#1E40AF"><div class="bk-t">标的信息</div><div class="bk-c"><div class="ss"><div class="ss-t">题材热点</div><div class="ss-c">光纤光缆（AI算力拉动）、海洋系列（海缆/海工）、电网建设、新能源；在手订单饱满（能源网络约308亿）。</div></div>
+<div class="ss"><div class="ss-t">业绩情况</div><div class="ss-c">2025A营收525.00亿元（+9.2%）、归母净利润29.02亿元（+2.3%）；2026Q1营收131.42亿（+34.7%）、归母9.19亿（+46.4%）。</div></div>
+<div class="ss"><div class="ss-t">定增动态</div><div class="ss-c">暂无。</div></div>
+<div class="ss"><div class="ss-t">资本动作</div><div class="ss-c">2026H1预增50%—60%；能源网络在手订单约308亿元（海洋121/电网162/新能源25），奠定增长基础；2025年研发投入20.79亿元（连续三年增长），攻克的750kV交联聚乙烯绝缘电力电缆、220kV绝缘电缆国产化等突破强化高端壁垒。</div></div>
+<div class="ss"><div class="ss-t">机构持仓</div><div class="ss-c">2026Q1香港结算持股11.32%、华夏中证电网设备ETF新进十大流通股东；近一年股价涨约2.55倍，机构持仓集中度随业绩兑现提升。</div></div></div></div><div class="blk" id="sec-forecast" style="--ac:#1E40AF"><div class="bk-t">行业一致盈利预测</div><div class="bk-c"><div class="ss-c plain">2023A：暂无（finance无该年度年报数据）<br>
+2024A：营收480.61亿、归母净利28.38亿、EPS0.835<br>
+2025A：营收525.00亿、归母净利29.02亿、EPS0.857<br>
+2026E：EPS1.97、营收638.74亿、归母67.43亿(同比+132.33%)、PE14.86、机构33家<br>
+2027E：EPS2.44、营收724.72亿、归母83.41亿(同比+23.7%)、PE12.01、机构19家<br>
+2028E：EPS3.01、营收789.74亿、归母102.61亿(同比+23.02%)、PE9.75、机构0家</div>
+<div class="ss"><div class="ss-t">解读</div><div class="ss-c">历史实际值取自公司年报(finance接口，EndDate=12-31)，一致预期取自机构一致预期库(覆盖2期)。数据完整度较好。</div></div>
+<div class="ss"><div class="ss-t">下修风险</div><div class="ss-c">需关注机构后续是否下修盈利预测。</div></div></div></div><div class="blk" id="sec-news" style="--ac:#1E40AF"><div class="bk-t">热点资讯</div><div class="bk-c"><div class="ss-c plain">中天科技2026年步入业绩释放期。公司7月14日披露半年度业绩预告，预计上半年归母净利润23.52—25.08亿元（同比+50%~+60%），受益AI算力与数字新基建加速落地、光纤光缆行业供需格局优化带来的量价齐升。此前5月沪市电子与通信业绩说明会上，公司披露截至2026Q1能源网络领域在手订单约308亿元，其中海洋系列约121亿元、电网建设约162亿元、新能源约25亿元，为全年增长奠定坚实基础。财务端，2025年营收525.00亿（+9.2%）、归母29.02亿（+2.3%）；2026Q1营收131.42亿（+34.7%）、归母9.19亿（+46.4%）。股价层面，受益AI算力与海风逻辑，近一年涨约2.55倍、2026年初至4月涨约154%，跻身千亿市值俱乐部。机构持仓上，2026Q1香港结算持股升至11.32%、华夏中证电网设备ETF新进十大流通股东。</div><div class="news-item"><span class="ni-idx">1.</span><span class="ni-date">[2026-07-14]</span> <a href="https://stcn.com/article/detail/4017250.html" target="_blank" class="nl">中天科技:上半年净利润同比预增50%—60%</a> <span class="ni-src">｜来源：证券时报</span></div>
+<div class="news-item"><span class="ni-idx">2.</span><span class="ni-date">[2026-04-25]</span> <a href="https://newzzbcx.cs.com.cn/cxnews.html?name=new20260425090015dzzugwza&amp;random=ijADCdok" target="_blank" class="nl">中天科技:2026年一季度净利润9.19亿元 同比增长46.42%</a> <span class="ni-src">｜来源：中国证券报</span></div></div></div></div>
+      </section>
+      <section class="card" id="sec-advisor">
+    <header class="card-h">
+      <div class="ttl"><span class="nm">投顾总结</span></div>
+      <span id="adv_meta" class="adv-meta"></span>
+    </header>
+    <div class="adv-body">
+      <div class="ai-sum" id="aiSum" data-ai="2026H1预增50%—60%（归母23.52—25.08亿），受益AI算力与光纤光缆量价齐升；2026Q1营收+34.7%、净利+46.4%。
+能源网络在手订单约308亿（海洋121/电网162/新能源25），增长可见度高。
+2025A营收525.00亿（+9.2%）、归母29.02亿（+2.3%）；2026E—2028E暂无一致预期（consensus=null）。
+近一年股价涨约2.55倍；"><div class="ai-sum-h"><div class="ai-sum-hl"><span class="ai-badge">AI 总结</span><span class="ai-tag">仅供参考</span></div><button id="btn_ai_history" class="btn btn-mini btn-ghost" type="button" style="display:none;"><span>AI 历史</span><span class="hb-count" id="ai_hist_n">0</span></button></div><div class="ai-sum-c">2026H1预增50%—60%（归母23.52—25.08亿），受益AI算力与光纤光缆量价齐升；2026Q1营收+34.7%、净利+46.4%。<br>
+能源网络在手订单约308亿（海洋121/电网162/新能源25），增长可见度高。<br>
+2025A营收525.00亿（+9.2%）、归母29.02亿（+2.3%）；2026E—2028E暂无一致预期（consensus=null）。<br>
+近一年股价涨约2.55倍；光纤价格不及预期、海风审批放缓与电网投资波动为下修风险。</div><div id="ai_history" class="ai-history" style="display:none;"></div></div>
+      <script>window.__AI_SUMMARY__="2026H1预增50%—60%（归母23.52—25.08亿），受益AI算力与光纤光缆量价齐升；2026Q1营收+34.7%、净利+46.4%。\n能源网络在手订单约308亿（海洋121/电网162/新能源25），增长可见度高。\n2025A营收525.00亿（+9.2%）、归母29.02亿（+2.3%）；2026E—2028E暂无一致预期（consensus=null）。\n近一年股价涨约2.55倍；光纤价格不及预期、海风审批放缓与电网投资波动为下修风险。";</script>
+      <div class="adv-divider"><span>以下为投顾可补充 / 修正的观点（本地保存；多次提交均会留痕）</span></div>
+      <div id="adv_view" class="adv-view"></div>
+      <textarea id="adv_edit" class="adv-edit" placeholder="在此填写投顾总结，支持多行；提交后将在总目录对应卡片上展示，并提供一键复制；历史版本自动留痕可回看。"></textarea>
+      <div class="adv-actions">
+        <button id="btn_edit" class="btn" type="button">录入</button>
+        <button id="btn_submit" class="btn btn-primary" type="button" style="display:none;">提交</button>
+        <button id="btn_copy" class="btn" type="button">一键复制</button>
+        <button id="btn_history" class="btn btn-ghost" type="button" style="display:none;">
+          <span>查看历史</span><span class="hb-count" id="hist_n">0</span>
+        </button>
+      </div>
+      <div id="adv_history" class="adv-history" style="display:none;"></div>
+    </div>
+  </section>
+    </div>
+  </div>
+  <div class="disclaimer">风险提示：本页数据来源于第三方，经 AI 分析整理生成，仅供研究参考，不构成任何投资建议或决策依据。市场有风险，投资需谨慎。</div>
+  <div class="foot">本页由 WorkBuddy「标的解读」skill 自动生成 ｜ 2026年7月30日</div>
+</div>
+<script>
+    (function(){
+      var HKEY='advisor_history_sh600522';
+      var SKEY='advisor_summary_sh600522';   // 兼容旧版单条字符串
+      var AIKEY='ai_history_sh600522';
+      function loadHist(){
+        try{
+          var arr=JSON.parse(localStorage.getItem(HKEY)||'[]');
+          if(Array.isArray(arr)) return arr;
+        }catch(e){}
+        // 旧版字符串迁移：包装成单条历史
+        var old=localStorage.getItem(SKEY);
+        if(old && old.trim()){
+          var arr=[{ts:0, summary:old}];
+          localStorage.setItem(HKEY, JSON.stringify(arr));
+          return arr;
+        }
+        return [];
+      }
+      function saveHist(arr){ localStorage.setItem(HKEY, JSON.stringify(arr)); }
+      function loadAiHist(){
+        try{ var arr=JSON.parse(localStorage.getItem(AIKEY)||'[]'); if(Array.isArray(arr)) return arr; }catch(e){}
+        return [];
+      }
+      function saveAiHist(arr){ localStorage.setItem(AIKEY, JSON.stringify(arr)); }
+      function fmtTs(t){
+        if(!t) return '（历史迁移条目）';
+        var d=new Date(t);
+        function p(n){ return n<10?'0'+n:n; }
+        return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes());
+      }
+      function escapeHtml(s){return (s||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+      function nl2br(s){return escapeHtml(s).replace(/\n/g,'<br>');}
+
+      // ---- 投顾总结 ----
+      var view=document.getElementById('adv_view');
+      var edit=document.getElementById('adv_edit');
+      var bEdit=document.getElementById('btn_edit');
+      var bSub=document.getElementById('btn_submit');
+      var bCopy=document.getElementById('btn_copy');
+      var bHist=document.getElementById('btn_history');
+      var histBox=document.getElementById('adv_history');
+      var histN=document.getElementById('hist_n');
+      var meta=document.getElementById('adv_meta');
+
+      function current(){
+        var h=loadHist();
+        return h.length ? h[0] : null;
+      }
+      function render(){
+        var h=loadHist();
+        var c=h[0];
+        if(c && c.summary && c.summary.trim()){
+          view.innerHTML='<div class="adv-text">'+nl2br(c.summary)+'</div>';
+          if(meta) meta.textContent = c.ts ? ('最新提交 · '+fmtTs(c.ts)) : '历史迁移条目';
+        } else {
+          view.innerHTML='<div class="adv-empty">（暂无投顾总结，点击「录入」填写；提交后将在总目录对应卡片上展示并提供一键复制；历史版本自动留痕）</div>';
+          if(meta) meta.textContent='';
+        }
+        if(histN) histN.textContent = Math.max(0, h.length-1);
+        if(bHist) bHist.style.display = h.length>1 ? 'inline-flex' : 'none';
+      }
+      function renderHistory(){
+        var h=loadHist().slice(1);   // 最新一条已在上面展示
+        if(!h.length){
+          histBox.innerHTML='<div class="hist-empty">暂无历史版本（首条记录就是当前版本）</div>';
+          return;
+        }
+        var html=h.map(function(item, i){
+          return '<div class="hist-item" data-idx="'+i+'">'
+            +'<div class="hist-meta"><span class="ts">'+fmtTs(item.ts)+'</span></div>'
+            +'<div class="hist-body">'+nl2br(item.summary)+'</div>'
+            +'</div>';
+        }).join('');
+        histBox.innerHTML='<div class="adv-history-h"><span>历史版本（按时间倒序，最新在上）</span><span class="x" id="hist_close">×</span></div>'+html;
+        var close=document.getElementById('hist_close');
+        if(close) close.onclick=function(){ histBox.style.display='none'; };
+      }
+
+      bEdit.onclick=function(){ var c=current(); edit.value=c? c.summary : ''; view.style.display='none'; edit.style.display='block'; bEdit.style.display='none'; bSub.style.display='inline-flex'; edit.focus(); };
+      bSub.onclick=function(){
+        var v=edit.value.trim();
+        if(!v){ flash('内容不能为空'); return; }
+        var arr=loadHist();
+        arr.unshift({ts:Date.now(), summary:v});
+        // 上限 50 条，避免 localStorage 膨胀
+        if(arr.length>50) arr=arr.slice(0,50);
+        saveHist(arr);
+        edit.style.display='none'; bSub.style.display='none'; bEdit.style.display='inline-flex'; view.style.display='block';
+        render(); flash('已提交（第 '+arr.length+' 条记录）');
+      };
+      bCopy.onclick=function(){ var c=current(); if(!c||!c.summary.trim()){ flash('暂无内容'); return; } if(copyText(c.summary)) flash('已复制最新一条'); };
+      bHist.onclick=function(){
+        if(histBox.style.display==='none' || !histBox.style.display){ histBox.style.display='block'; renderHistory(); }
+        else { histBox.style.display='none'; }
+      };
+      render();
+
+      // ---- AI 总结历史 ----
+      var curAi = (window.__AI_SUMMARY__||'').trim();
+      var bAiHist = document.getElementById('btn_ai_history');
+      var aiHistN = document.getElementById('ai_hist_n');
+      var aiHistBox = document.getElementById('ai_history');
+      function recordAi(){
+        if(!curAi) return;
+        var arr = loadAiHist();
+        if(arr.length===0 || (arr[0].summary||'') !== curAi){
+          arr.unshift({ts:Date.now(), summary:curAi});
+          if(arr.length>30) arr = arr.slice(0,30);
+          saveAiHist(arr);
+        }
+      }
+      function refreshAiBtn(){
+        var arr = loadAiHist();
+        var n = Math.max(0, arr.length-1);
+        if(aiHistN) aiHistN.textContent = n;
+        if(bAiHist) bAiHist.style.display = n>0 ? 'inline-flex' : 'none';
+      }
+      function renderAiHistory(){
+        var arr = loadAiHist().slice(1);   // 最新已在 AI 总结块展示
+        if(!arr.length){
+          aiHistBox.innerHTML='<div class="hist-empty">暂无 AI 历史版本</div>';
+          return;
+        }
+        var html = arr.map(function(item, i){
+          return '<div class="hist-item" data-idx="'+i+'">'
+            +'<div class="hist-meta"><span class="ts">'+fmtTs(item.ts)+'</span></div>'
+            +'<div class="hist-body">'+nl2br(item.summary)+'</div>'
+            +'</div>';
+        }).join('');
+        aiHistBox.innerHTML = '<div class="adv-history-h"><span>AI 历史版本（按时间倒序，最新在上）</span><span class="x" id="ai_hist_close">×</span></div>' + html;
+        var close=document.getElementById('ai_hist_close');
+        if(close) close.onclick=function(){ aiHistBox.style.display='none'; };
+      }
+      recordAi();
+      refreshAiBtn();
+      if(bAiHist) bAiHist.onclick=function(){
+        if(aiHistBox.style.display==='none' || !aiHistBox.style.display){ aiHistBox.style.display='block'; renderAiHistory(); }
+        else { aiHistBox.style.display='none'; }
+      };
+    })();
+</script>
+<script>
+    (function(){
+      var links = Array.prototype.slice.call(document.querySelectorAll('.sidenav a'));
+      var map = {};
+      links.forEach(function(a){ var id=a.getAttribute('href').slice(1); map[id]=a; });
+      var targets = links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);
+      function setActive(id){
+        links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href').slice(1)===id); });
+      }
+      if('IntersectionObserver' in window && targets.length){
+        var obs=new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ if(e.isIntersecting) setActive(e.target.id); });
+        }, { rootMargin:'-10% 0px -75% 0px', threshold:0 });
+        targets.forEach(function(t){ obs.observe(t); });
+      }
+      links.forEach(function(a){ a.addEventListener('click', function(){ setActive(a.getAttribute('href').slice(1)); }); });
+    })();
+</script>
+<script>window.__codes__=["sh600522"]; liveQuote(); LIVE_TIMER=setInterval(liveQuote,30000);</script>
+</body>
+</html>
