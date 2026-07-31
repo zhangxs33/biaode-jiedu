@@ -157,13 +157,25 @@
 </style>
 <script>
   function escapeHtml(s){return (s||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
-  function copyText(t){
-    // 直接走最强兜底：textarea + execCommand；失败则弹手动复制模态
-    // （不再走 navigator.clipboard：file:///iframe 等场景 writeText 经常被拒、且无可见反馈）
-    return fallbackCopy(t);
+  function copyText(t, okMsg){
+    // 优先 navigator.clipboard（https 安全上下文，GitHub Pages 可用）；失败回退 execCommand；成功/失败均给 toast 反馈
+    t = (t==null ? '' : (''+t));
+    okMsg = okMsg || '已复制到剪贴板';
+    if(!t.trim && t.length===0){ flash('暂无内容'); return false; }
+    if(navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext){
+      try{
+        var pr = navigator.clipboard.writeText(t);
+        if(pr && pr.then){
+          pr.then(function(){ flash(okMsg); }, function(){ fallbackCopy(t, okMsg); });
+          return true;
+        }
+      }catch(e){ /* 落到回退 */ }
+    }
+    return fallbackCopy(t, okMsg);
   }
-  function fallbackCopy(t){
+  function fallbackCopy(t, okMsg){
     // 关键：textarea 必须「可视、聚焦、选中」，否则 execCommand('copy') 会被浏览器静默拒绝
+    okMsg = okMsg || '已复制到剪贴板';
     var ta=document.createElement('textarea');
     ta.value=t;
     ta.setAttribute('readonly','');
@@ -178,6 +190,7 @@
     }catch(e){ ok=false; }
     if(ok){
       document.body.removeChild(ta);
+      flash(okMsg);   // 成功也给可见反馈，避免「点击无效」错觉
     } else {
       // execCommand 被拒：保留 textarea（不删除，让用户能看到并手动复制），同时弹模态强调提示
       ta.id='_fallbackTA';
@@ -328,7 +341,7 @@
   <a class="back" href="../index.html">← 返回总目录</a>
   <div class="ph">
     <h1>紫光股份 解读</h1>
-    <div class="sub">代码 sz000938 ｜ 数据源 westock-data + WebSearch ｜ 13:07 更新</div>
+    <div class="sub">代码 sz000938 ｜ 数据源 westock-data + WebSearch ｜ 09:14 更新</div>
   </div>
   <div class="layout">
     <nav class="sidenav"><div class="sn-h">本页导航</div><a href="#sec-quote" class="active">行情数据</a><a href="#sec-chart" class="">近60日走势</a><a href="#sec-macro" class="">宏观与政策</a><a href="#sec-info" class="">标的信息</a><a href="#sec-forecast" class="">行业一致盈利预测</a><a href="#sec-news" class="">热点资讯</a><a href="#sec-advisor" class="">投顾总结</a></nav>
@@ -392,7 +405,7 @@
     </div>
   </div>
   <div class="disclaimer">风险提示：本页数据来源于第三方，经 AI 分析整理生成，仅供研究参考，不构成任何投资建议或决策依据。市场有风险，投资需谨慎。</div>
-  <div class="foot">本页由 WorkBuddy「标的解读」skill 自动生成 ｜ 2026年7月30日</div>
+  <div class="foot">本页由 WorkBuddy「标的解读」skill 自动生成 ｜ 2026年7月31日</div>
 </div>
 <script>
     (function(){
@@ -413,12 +426,12 @@
         }
         return [];
       }
-      function saveHist(arr){ localStorage.setItem(HKEY, JSON.stringify(arr)); }
+      function saveHist(arr){ try{ localStorage.setItem(HKEY, JSON.stringify(arr)); }catch(e){ flash('当前环境无法本地保存（请用浏览器打开正式地址 https://zhangxs33.github.io/biaode-jiedu/ ）'); } }
       function loadAiHist(){
         try{ var arr=JSON.parse(localStorage.getItem(AIKEY)||'[]'); if(Array.isArray(arr)) return arr; }catch(e){}
         return [];
       }
-      function saveAiHist(arr){ localStorage.setItem(AIKEY, JSON.stringify(arr)); }
+      function saveAiHist(arr){ try{ localStorage.setItem(AIKEY, JSON.stringify(arr)); }catch(e){} }
       function fmtTs(t){
         if(!t) return '（历史迁移条目）';
         var d=new Date(t);
@@ -485,7 +498,7 @@
         edit.style.display='none'; bSub.style.display='none'; bEdit.style.display='inline-flex'; view.style.display='block';
         render(); flash('已提交（第 '+arr.length+' 条记录）');
       };
-      bCopy.onclick=function(){ var c=current(); if(!c||!c.summary.trim()){ flash('暂无内容'); return; } if(copyText(c.summary)) flash('已复制最新一条'); };
+      bCopy.onclick=function(){ var c=current(); if(!c||!c.summary.trim()){ flash('暂无内容'); return; } copyText(c.summary, '已复制最新一条'); };
       bHist.onclick=function(){
         if(histBox.style.display==='none' || !histBox.style.display){ histBox.style.display='block'; renderHistory(); }
         else { histBox.style.display='none'; }
